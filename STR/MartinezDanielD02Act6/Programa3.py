@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
-# Form implementation generated from reading ui file 'Programa3.ui'
-# Created by: PyQt5 UI code generator 5.9.2
-
 '''
-Seminario de Sistemas Operativos - D02
-    Actividad de Aprendizaje 6
-Programa 3. Algoritmo de planificación FCFS (First Come First Server)
+Sistemas Operativos
+
 Integrantes:
     Saul Alejandro Castañeda Perez
     Daniel Martinez Martinez
     
-Friday, March 10, 2023
 '''
 
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -1153,7 +1147,7 @@ class Ui_MainWindow(object):
             self.lineEdit_13.setText('{}'.format(Lotes[ContadorMinioms][0]))
             self.lineEdit_17.setText('{}'.format(Lotes[ContadorMinioms][1]))
             self.lineEdit_25.setText('{}'.format(Lotes[ContadorMinioms][7]))
-            catch=[1,ContadorMinioms]
+            catch=[1,ContadorMinioms,Lotes[ContadorMinioms][1]]
             SubLotesPendientes.append(catch)
             ContadorMinioms+=1
             self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1163,7 +1157,7 @@ class Ui_MainWindow(object):
                 self.lineEdit_14.setText('{}'.format(Lotes[ContadorMinioms][0]))
                 self.lineEdit_18.setText('{}'.format(Lotes[ContadorMinioms][1]))
                 self.lineEdit_23.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                catch=[2,ContadorMinioms]
+                catch=[2,ContadorMinioms,Lotes[ContadorMinioms][1]]
                 SubLotesPendientes.append(catch)
                 ContadorMinioms+=1
                 self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1173,7 +1167,7 @@ class Ui_MainWindow(object):
                     self.lineEdit_16.setText('{}'.format(Lotes[ContadorMinioms][0]))
                     self.lineEdit_19.setText('{}'.format(Lotes[ContadorMinioms][1]))
                     self.lineEdit_24.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                    catch=[3,ContadorMinioms]
+                    catch=[3,ContadorMinioms,Lotes[ContadorMinioms][1]]
                     SubLotesPendientes.append(catch)
                     ContadorMinioms+=1
                     self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1183,12 +1177,13 @@ class Ui_MainWindow(object):
                         self.lineEdit_15.setText('{}'.format(Lotes[ContadorMinioms][0]))
                         self.lineEdit_20.setText('{}'.format(Lotes[ContadorMinioms][1]))
                         self.lineEdit_26.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                        catch=[4,ContadorMinioms]
+                        catch=[4,ContadorMinioms,Lotes[ContadorMinioms][1]]
                         SubLotesPendientes.append(catch)
                         ContadorMinioms+=1
                         self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
-                        self.aMimir(500)
+                        self.aMimir(500)     
         while(len(SubLotesPendientes)!=0):
+            SubLotesPendientes.sort(key=lambda x: x[2])
             self.lineEdit_13.setStyleSheet("border-bottom:2px solid rgb(225, 131, 0);")
             self.lineEdit_17.setStyleSheet("border-bottom:2px solid rgb(225, 131, 0);")
             self.lineEdit_25.setStyleSheet("border-bottom:2px solid rgb(225, 131, 0);")
@@ -1224,7 +1219,7 @@ class Ui_MainWindow(object):
                         self.lineEdit_13.setText('{}'.format(Lotes[ContadorMinioms][0]))
                         self.lineEdit_17.setText('{}'.format(Lotes[ContadorMinioms][1]))
                         self.lineEdit_25.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                        catch=[1,ContadorMinioms]
+                        catch=[1,ContadorMinioms,Lotes[ContadorMinioms][1]]
                         SubLotesPendientes.append(catch)
                         ContadorMinioms+=1
                         self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1247,7 +1242,7 @@ class Ui_MainWindow(object):
                         self.lineEdit_14.setText('{}'.format(Lotes[ContadorMinioms][0]))
                         self.lineEdit_18.setText('{}'.format(Lotes[ContadorMinioms][1]))
                         self.lineEdit_23.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                        catch=[2,ContadorMinioms]
+                        catch=[2,ContadorMinioms,Lotes[ContadorMinioms][1]]
                         SubLotesPendientes.append(catch)
                         ContadorMinioms+=1
                         self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1270,7 +1265,7 @@ class Ui_MainWindow(object):
                         self.lineEdit_16.setText('{}'.format(Lotes[ContadorMinioms][0]))
                         self.lineEdit_19.setText('{}'.format(Lotes[ContadorMinioms][1]))
                         self.lineEdit_24.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                        catch=[3,ContadorMinioms]
+                        catch=[3,ContadorMinioms,Lotes[ContadorMinioms][1]]
                         SubLotesPendientes.append(catch)
                         ContadorMinioms+=1
                         self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1293,7 +1288,7 @@ class Ui_MainWindow(object):
                         self.lineEdit_15.setText('{}'.format(Lotes[ContadorMinioms][0]))
                         self.lineEdit_20.setText('{}'.format(Lotes[ContadorMinioms][1]))
                         self.lineEdit_26.setText('{}'.format(Lotes[ContadorMinioms][7]))
-                        catch=[4,ContadorMinioms]
+                        catch=[4,ContadorMinioms,Lotes[ContadorMinioms][1]]
                         SubLotesPendientes.append(catch)
                         ContadorMinioms+=1
                         self.lineEdit_21.setText('{}'.format(Procesos-ContadorMinioms))
@@ -1471,4 +1466,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
